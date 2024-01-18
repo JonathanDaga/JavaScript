@@ -1,29 +1,18 @@
-function operacion(numero1, numero2, operador) {
-    if (operador === '+') {
-        return numero1 + numero2;
-    } else if (operador === '-') {
-        return numero1 - numero2;
-    } else if (operador === '*') {
-        return numero1 * numero2;
-    } else if (operador === '/') {
-        if (numero2 !== 0) {
-            return numero1 / numero2;
-        } else {
-            return 'Error: No se puede dividir por cero';
-        }
-    } else {
-        return 'Error: Operador no válido';
+function Producto( nombre, precio ){
+    this.nombre = nombre;
+    this.precio = precio;
+    this.precioFINAL = 0;
+    this.sumarIVA = function(){
+        this.precioFINAL = this.precio * 1.21;
+        alert('El precio es $' + this.precio + ' | Con IVA es $' + this.precioFinal)
     }
 }
 
-function pedirDatos() {
-    let numero1 = parseInt(prompt('Ingrese el primer número:'));
-    let numero2 = parseInt(prompt('Ingrese el segundo número:'));
-    let operador = prompt('Ingrese el operador (+, -, *, /):');
+const producto1 = new Producto('Camiseta Argentina Mundial 2022' , 55000);
+const producto2 = new Producto('Camiseta Argentina Copa America 2021' , 48000);
+const producto3 = new Producto('Camiseta Argentina Finalissima 2022' , 50000);
 
-    let resultado = operacion(numero1, numero2, operador);
+producto1.sumarIVA();
 
-    alert('El resultado es: ' + resultado);
-}
-
-pedirDatos();
+console.log( producto1);
+console.log( producto1.nombre);
