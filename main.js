@@ -1,18 +1,30 @@
-function Producto( nombre, precio ){
-    this.nombre = nombre;
-    this.precio = precio;
-    this.precioFINAL = 0;
-    this.sumarIVA = function(){
-        this.precioFINAL = this.precio * 1.21;
-        alert('El precio es $' + this.precio + ' | Con IVA es $' + this.precioFinal)
-    }
+let carrito = [];
+
+let producto = prompt('¿Qué producto estás buscando?');
+
+carrito.push(producto);
+console.log('Producto agregado al carrito:' + producto);
+
+function totalCompra() {
+    let total = 0;
+    for (let i = 0; i < carrito.length; i++);
+    return total;
 }
 
-const producto1 = new Producto('Camiseta Argentina Mundial 2022' , 55000);
-const producto2 = new Producto('Camiseta Argentina Copa America 2021' , 48000);
-const producto3 = new Producto('Camiseta Argentina Finalissima 2022' , 50000);
+function agregarIVA(total) {
+    const IVA = 0.21;
+    const totalConIVA = total + (total * IVA);
+    return totalConIVA;
+}
 
-producto1.sumarIVA();
+function ProductosDisponibles() {
+    let productos = ['Camiseta seleccion argentina qatar 2022' , 'Camiseta seleccion argentina finalissima' , 'Camiseta seleccion argentina copa america 2021'];
+    for (let i = 0; i < productos.length; i++)
+    console.log(productos[i]);
+}
 
-console.log( producto1);
-console.log( producto1.nombre);
+let productos = [
+    {nombre:'Camiseta seleccion argentina qatar 2022', precio: 55000},
+    {nombre:'Camiseta seleccion argentina finalissima', precio: 52000},
+    {nombre:'Camiseta seleccion argentina copa america 2021', precio: 50000}
+];
