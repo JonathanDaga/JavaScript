@@ -23,6 +23,18 @@ function ProductosDisponibles() {
     console.log(productos[i]);
 }
 
+function operacionCarrito(operacion) {
+    carrito.forEach((producto) => {
+        operacion(producto);
+    })
+}
+
+function imprimirProducto(producto) {
+    console.log("Producto en el carrito: " + producto);
+}
+
+aplicarOperacionACarrito(imprimirProducto);
+
 let productos = [
     {nombre:'Camiseta seleccion argentina qatar 2022', precio: 55000},
     {nombre:'Camiseta seleccion argentina finalissima', precio: 52000},
