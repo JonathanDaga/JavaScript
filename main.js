@@ -1,13 +1,24 @@
 let carrito = [];
 
-let producto = prompt('¿Qué producto estás buscando?');
+function agregarProductoAlCarrito() {
+    let producto = prompt('¿Qué producto estás buscando?');
+    carrito.push(producto);
+    actualizarCarritoEnDOM();
+}
 
-carrito.push(producto);
-console.log('Producto agregado al carrito:' + producto);
+function actualizarCarritoEnDOM() {
+    const carritoContainer = document.getElementById('carrito-container');
+    carritoContainer.innerHTML = ''; // Limpiamos el contenido anterior del carrito
+
+    carrito.forEach((producto) => {
+        const productoElement = document.createElement('p');
+        productoElement.textContent = producto;
+        carritoContainer.appendChild(productoElement);
+    });
+}
 
 function totalCompra() {
     let total = 0;
-    for (let i = 0; i < carrito.length; i++);
     return total;
 }
 
@@ -18,25 +29,21 @@ function agregarIVA(total) {
 }
 
 function ProductosDisponibles() {
-    let productos = ['Camiseta seleccion argentina qatar 2022' , 'Camiseta seleccion argentina finalissima' , 'Camiseta seleccion argentina copa america 2021'];
-    for (let i = 0; i < productos.length; i++)
-    console.log(productos[i]);
+    let productos = ['Camiseta seleccion argentina qatar 2022', 'Camiseta seleccion argentina finalissima', 'Camiseta seleccion argentina copa america 2021'];
+    for (let i = 0; i < productos.length; i++) {
+        console.log(productos[i]);
+    }
 }
 
-function operacionCarrito(operacion) {
+function aplicarOperacionACarrito(operacion) {
     carrito.forEach((producto) => {
         operacion(producto);
-    })
+    });
 }
 
 function imprimirProducto(producto) {
     console.log("Producto en el carrito: " + producto);
 }
 
-aplicarOperacionACarrito(imprimirProducto);
-
-let productos = [
-    {nombre:'Camiseta seleccion argentina qatar 2022', precio: 55000},
-    {nombre:'Camiseta seleccion argentina finalissima', precio: 52000},
-    {nombre:'Camiseta seleccion argentina copa america 2021', precio: 50000}
-];
+const agregarProductoBtn = document.getElementById('agregar-producto-btn');
+agregarProductoBtn.addEventListener('click', agregarProductoAlCarrito);
