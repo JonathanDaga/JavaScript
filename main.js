@@ -1,37 +1,24 @@
-const pantalla = document.querySelector(".pantalla");
-const botones = document.querySelectorAll(".btn");
+const boton = document.querySelector('#boton');
+const foto = document.querySelector('#foto');
+const nombre = document.querySelector('#nombre');
+const correo = document.querySelector('#correo');
+const telefono = document.querySelector('#telefono');
 
-botones.forEach(boton => {
-    boton.addEventListener("click", () => {
-        const botonApretado = boton.textContent;
+const generarUsuario = async() => {
+    try {
+        const url = 'https://randomuser.me/api/';
+        const respuesta = await fetch(url);
+        const {results} = await respuesta.json();
+        const datos = results [0];
+        
+        foto.src = datos.picture.medium;
+        nombre.textContent = datos.name.first;
+        correo.textContent = datos.email
+        telefono.textContent = datos.phone
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-        if(boton.id === "c") {
-            pantalla.textContent = "0";
-            return;
-        }
-
-        if (boton.id === "borrar") {
-            if(pantalla.textContent.length === 1 || pantalla.textContent === "Error!") {
-                pantalla.textContent =0;
-            }else {
-                pantalla.textContent = pantalla.textContent.slice(0, -1);
-            }
-            return;
-        }
-
-        if (boton.id === "igual") {
-            try {
-                pantalla.textContent = eval(pantalla.textContent);
-            } catch {
-                pantalla.textContent = "Error!";
-            }
-            return;
-        }
-
-        if (pantalla.textContent === "0" || pantalla.textContent === "Error!") {
-            pantalla.textContent = botonApretado;
-        }else {
-            pantalla.textContent += botonApretado;
-        }
-    })
-})
+boton.addEventListener('click', generarUsuario);
+document.addEventListener('DOMContentLoaded', generarUsuario)
