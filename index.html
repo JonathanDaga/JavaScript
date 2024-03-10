@@ -1,26 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador De Usuarios</title>
+    <title>ArgenShop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Generador De Usuarios</h1>
 
-    <div class="contenedor">
-        <img src="" alt="perfil de usuario" id="foto">
-        <h2>Nombre: <span id="nombre"></span></h2>
-        <div>
-            <p>Correo: <span id="correo"></span></p>
-            <p>Telefono <span id="telefono"></span></p>
-        </div>
+    <div class="wrapper">
+        <aside>
+            <header>
+                <h1 class="logo">ArgenShop</h1>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li><button class="boton-menu boton-categoria active"><i class="bi bi-arrow-right-circle-fill"></i>Todos los productos</button></li>
+                    <li><button class="boton-menu boton-categoria"><i class="bi bi-arrow-right-circle-fill"></i>Camisetas</button></li>
+                    <li><button class="boton-menu boton-categoria"><i class="bi bi-arrow-right-circle-fill"></i>Retro</button></li>
+                    <li><a class="boton-carrito" href="./carrito.html"><i class="bi bi-bag-plus-fill"></i>Carrito <span class="numerito">0</span></a></li>
+                </ul>
+            </nav>
+            <footer>
+                <p class="texto-footer">© ArgenShop 2024</p>
+            </footer>
+        </aside>
+
+        <main>
+            <h2 class="titulo-principal">Todos los productos</h2>
+            <div class="contenedor-productos">
+                <div class="producto">
+                    <img src="/img/3 Estrellas.jpg" alt="">
+                    <div class="producto-detalles">
+                        <h3 class="producto-titulo">Camiseta titular mundial 2022</h3>
+                        <p class="producto-precio">$50000</p>
+                        <button class="producto-agregar">Agregar</button>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="/img/CamisetaVioleta.jpg" alt="">
+                    <div class="producto-detalles">
+                        <h3 class="producto-titulo">Camiseta suplente mundial 2022</h3>
+                        <p class="producto-precio">$50000</p>
+                        <button class="producto-agregar">Agregar</button>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="/img/Finalissima.jpg" alt="">
+                    <div class="producto-detalles">
+                        <h3 class="producto-titulo">Camiseta Finalissima 2022</h3>
+                        <p class="producto-precio">$50000</p>
+                        <button class="producto-agregar">Agregar</button>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="/img/CopaAmerica21.jpg" alt="">
+                    <div class="producto-detalles">
+                        <h3 class="producto-titulo">Camiseta Copa America 2021</h3>
+                        <p class="producto-precio">$40000</p>
+                        <button class="producto-agregar">Agregar</button>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="/img/Alternativa94.jpg" alt="">
+                    <div class="producto-detalles">
+                        <h3 class="producto-titulo">Camiseta alternativa mundial 1994</h3>
+                        <p class="producto-precio">$60000</p>
+                        <button class="producto-agregar">Agregar</button>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="/img/Retro1.jpg" alt="">
+                    <div class="producto-detalles">
+                        <h3 class="producto-titulo">Camiseta alternativa mundial 1990</h3>
+                        <p class="producto-precio">$60000</p>
+                        <button class="producto-agregar">Agregar</button>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="/img/Retro2.jpg" alt="">
+                    <div class="producto-detalles">
+                        <h3 class="producto-titulo">Camiseta alternativa mundial 1986</h3>
+                        <p class="producto-precio">$60000</p>
+                        <button class="producto-agregar">Agregar</button>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="/img/Retro3.jpg" alt="">
+                    <div class="producto-detalles">
+                        <h3 class="producto-titulo">Camiseta titular mundial 2006</h3>
+                        <p class="producto-precio">$60000</p>
+                        <button class="producto-agregar">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
     </div>
 
-    <div class="boton">
-        <button id="boton">Generar Usuario</button>
-    </div>
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
