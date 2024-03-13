@@ -1,0 +1,82 @@
+[
+    {
+        "id": "camiseta-titular-mundial-2022",
+        "titulo": "Camiseta titular mundial 2022",
+        "imagen": "./img/3 estrellas.jpg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "camisetas"
+        },
+        "precio":50000
+    },
+    {
+        "id": "camiseta-suplente-mundial-2022",
+        "titulo": "Camiseta suplente mundial 2022",
+        "imagen": "./img/CamisetaVioleta.jpg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "camisetas"
+        },
+        "precio":50000
+    },
+    {
+        "id": "camiseta-finalissima-2022",
+        "titulo": "Camiseta Finalissima 2022",
+        "imagen": "./img/Finalissima.jpg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "camisetas"
+        },
+        "precio":50000
+    },
+    {
+        "id": "camiseta-copa-america-2021",
+        "titulo": "Camiseta Copa America 2021",
+        "imagen": "./img/CopaAmerica21.jpg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "camisetas"
+        },
+        "precio":50000
+    },
+    {
+        "id": "camiseta-alternativa-mundial-1994",
+        "titulo": "Camiseta alternativa mundial 1994",
+        "imagen": "./img/Alternativa94.jpg",
+        "categoria": {
+            "nombre": "Retro",
+            "id": "retro"
+        },
+        "precio":60000
+    },
+    {
+        "id": "camiseta-alternativa-mundial-1990",
+        "titulo": "Camiseta alternativa mundial 1990",
+        "imagen": "./img/Retro1.jpg",
+        "categoria": {
+            "nombre": "Retro",
+            "id": "retro"
+        },
+        "precio":60000
+    },
+    {
+        "id": "camiseta-alternativa-mundial-1986",
+        "titulo": "Camiseta alternativa mundial 1986",
+        "imagen": "./img/Retro2.jpg",
+        "categoria": {
+            "nombre": "Retro",
+            "id": "retro"
+        },
+        "precio":60000
+    },
+    {
+        "id": "camiseta-titular-mundial-2006",
+        "titulo": "Camiseta titular mundial 2006",
+        "imagen": "./img/Retro3.jpg",
+        "categoria": {
+            "nombre": "Retro",
+            "id": "retro"
+        },
+        "precio":60000
+    }
+]

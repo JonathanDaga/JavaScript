@@ -1,87 +1,12 @@
-// PRODUCTOS
+let productos = [];
 
-const productos = [
-    {
-        id: "camiseta-titular-mundial-2022",
-        titulo: "Camiseta titular mundial 2022",
-        imagen: "./img/3 estrellas.jpg",
-        categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
-        },
-        precio: 50000
-    },
-    {
-        id: "camiseta-suplente-mundial-2022",
-        titulo: "Camiseta suplente mundial 2022",
-        imagen: "./img/CamisetaVioleta.jpg",
-        categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
-        },
-        precio: 50000
-    },
-    {
-        id: "camiseta-finalissima-2022",
-        titulo: "Camiseta Finalissima 2022",
-        imagen: "./img/Finalissima.jpg",
-        categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
-        },
-        precio: 50000
-    },
-    {
-        id: "camiseta-copa-america-2021",
-        titulo: "Camiseta Copa America 2021",
-        imagen: "./img/CopaAmerica21.jpg",
-        categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
-        },
-        precio: 50000
-    },
-    {
-        id: "camiseta-alternativa-mundial-1994",
-        titulo: "Camiseta alternativa mundial 1994",
-        imagen: "./img/Alternativa94.jpg",
-        categoria: {
-            nombre: "Retro",
-            id: "retro"
-        },
-        precio: 60000
-    },
-    {
-        id: "camiseta-alternativa-mundial-1990",
-        titulo: "Camiseta alternativa mundial 1990",
-        imagen: "./img/Retro1.jpg",
-        categoria: {
-            nombre: "Retro",
-            id: "retro"
-        },
-        precio: 60000
-    },
-    {
-        id: "camiseta-alternativa-mundial-1986",
-        titulo: "Camiseta alternativa mundial 1986",
-        imagen: "./img/Retro2.jpg",
-        categoria: {
-            nombre: "Retro",
-            id: "retro"
-        },
-        precio: 60000
-    },
-    {
-        id: "camiseta-titular-mundial-2006",
-        titulo: "Camiseta titular mundial 2006",
-        imagen: "./img/Retro3.jpg",
-        categoria: {
-            nombre: "Retro",
-            id: "retro"
-        },
-        precio: 60000
-    }
-];
+fetch("./productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        cargarProductos(productos);
+    })
+
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".botones-categoria");
@@ -156,6 +81,25 @@ if (productosEnCarritoLS) {
 }
 
 function agregarAlCarrito(e) {
+
+    Toastify({
+        text: "Agregado al carrito",
+        duration: 3000,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            borderRadius: "2rem",
+            fondSize: ".75rem"
+        },
+        offset: {
+            x: "1.5rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: "1.5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
 
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find (producto => producto.id === idBoton);
